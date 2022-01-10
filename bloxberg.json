@@ -1,0 +1,161 @@
+{
+  "name": "Bloxberg",
+  "engine": {
+    "authorityRound": {
+      "params": {
+        "maximumUncleCountTransition": 0,
+        "maximumUncleCount": 0,
+        "stepDuration": "5",
+        "validators": {
+          "multi": {
+            "0": {
+              "list": [
+                "0x25327e6ec0B7A0b552Fb907bD6b3726A2F3D99FE",
+                "0x92db87a17af5083b3327f35b3d77d8d4abfb0cdc",
+                "0x09e5abedae50639406df6c86d748fbaff66a6df1",
+                "0x411636d64bb7ba6e1cc3b950bec9a837f59cd46f"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "params": {
+    "gasLimitBoundDivisor": "0x400",
+    "maximumExtraDataSize": "0x20",
+    "minGasLimit": "0x7A1200",
+    "networkID": "0x2325",
+
+    "eip140Transition": "0x0",
+    "eip211Transition": "0x0",
+    "eip214Transition": "0x0",
+    "eip658Transition": "0x0",
+
+    "eip145Transition": "0x0",
+    "eip1014Transition": "0x0",
+    "eip1052Transition": "0x0",
+
+    "eip1283Transition": "0x0",
+    "eip1344Transition": "0x0",
+    "eip1706Transition": "0x0",
+    "eip1884Transition": "0x0",
+    "eip2028Transition": "0x0"
+  },
+  "genesis": {
+    "seal": {
+      "authorityRound": {
+        "step": "0x0",
+        "signature": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "difficulty": "0x20000",
+    "gasLimit": "0x7A1200"
+  },
+  "accounts": {
+    "0x0000000000000000000000000000000000000001": {
+      "balance": "1",
+      "builtin": {
+        "name": "ecrecover",
+        "pricing": { "linear": { "base": 3000, "word": 0 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000002": {
+      "balance": "1",
+      "builtin": {
+        "name": "sha256",
+        "pricing": { "linear": { "base": 60, "word": 12 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000003": {
+      "balance": "1",
+      "builtin": {
+        "name": "ripemd160",
+        "pricing": { "linear": { "base": 600, "word": 120 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000004": {
+      "balance": "1",
+      "builtin": {
+        "name": "identity",
+        "pricing": { "linear": { "base": 15, "word": 3 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000005": {
+      "builtin": {
+        "name": "modexp",
+        "activate_at": 0,
+        "pricing": { "modexp": { "divisor": 20 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000006": {
+      "builtin": {
+        "name": "alt_bn128_add",
+        "activate_at": 0,
+        "pricing": {
+          "alt_bn128_const_operations": {
+            "price": 500
+          }
+        }
+      }
+    },
+    "0000000000000000000000000000000000000007": {
+      "builtin": {
+        "name": "alt_bn128_mul",
+        "pricing": {
+          "0": {
+            "info": "Istanbul HF",
+            "price": {
+              "alt_bn128_const_operations": {
+                "price": 6000
+              }
+            }
+          }
+        }
+      }
+    },
+    "0000000000000000000000000000000000000008": {
+      "builtin": {
+        "name": "alt_bn128_pairing",
+        "pricing": {
+          "0": {
+            "info": "Istanbul HF",
+            "price": {
+              "alt_bn128_pairing": {
+                "base": 45000,
+                "pair": 34000
+              }
+            }
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000009": {
+      "builtin": {
+        "name": "blake2_f",
+        "pricing": {
+          "0": {
+            "info": "Istanbul HF",
+            "price": {
+              "blake2_f": {
+                "gas_per_round": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "0x25327e6ec0B7A0b552Fb907bD6b3726A2F3D99FE": {
+      "balance": "100000000000000000000000000000000"
+    },
+    "0x92db87a17af5083b3327f35b3d77d8d4abfb0cdc": {
+      "balance": "100000000000000000000000000000000"
+    },
+    "0x09e5abedae50639406df6c86d748fbaff66a6df1": {
+      "balance": "100000000000000000000000000000000"
+    },
+    "0x411636d64bb7ba6e1cc3b950bec9a837f59cd46f": {
+      "balance": "100000000000000000000000000000000"
+    }
+  }
+}
