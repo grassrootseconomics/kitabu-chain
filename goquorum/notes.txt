@@ -2,6 +2,8 @@ when generating genesis from puppeth, remove the outer "genesis" key to parse wi
 
 cat testz.json | jq .genesis > testz_inner.json
 
+genesis needed for both validator and reader
+
 geth --datadir <foo> init testz_inner.json
 
 --
@@ -14,4 +16,17 @@ invoke validator:
 
 invoke reader:
 
- ./build/bin/geth --datadir /root/data --verbosity=3 --http.addr=0.0.0.0 --http --http.api eth,net --http.vhosts=*
+ ./build/bin/geth --datadir /root/data-reader --verbosity=3 --http.addr=0.0.0.0 --http --http.api eth,net --http.vhosts=*
+
+--
+
+For less noise limit who can connect to p2p.
+
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     tcp  --  159.65.112.244       anywhere             tcp dpt:30304
+ACCEPT     tcp  --  159.65.112.244       anywhere             tcp dpt:30303
+DROP       tcp  --  anywhere             anywhere             tcp dpt:30303
+DROP       tcp  --  anywhere             anywhere             tcp dpt:30304
+
+---

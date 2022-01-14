@@ -16,7 +16,7 @@
         "epoch": 30000,
         "allowedFutureBlockTime": 0
       },
-      "isQuorum": false,
+      "isQuorum": true,
       "txnSizeLimit": 0,
       "maxCodeSize": 0,
       "isMPS": false
