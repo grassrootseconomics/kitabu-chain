@@ -6,6 +6,12 @@ geth --datadir <foo> init testz_inner.json
 
 --
 
-invoke:
+invoke validator:
+
+./build/bin/geth --datadir /root/data --verbosity=5 --mine --password=/root/pass --unlock 0 --nodiscover --nat=extip:159.65.112.244
+
+--
+
+invoke reader:
 
  ./build/bin/geth --datadir /root/data --verbosity=3 --http.addr=0.0.0.0 --http --http.api eth,net --http.vhosts=*
