@@ -1,0 +1,11 @@
+when generating genesis from puppeth, remove the outer "genesis" key to parse with geth init;
+
+cat testz.json | jq .genesis > testz_inner.json
+
+geth --datadir <foo> init testz_inner.json
+
+--
+
+invoke:
+
+ ./build/bin/geth --datadir /root/data --verbosity=3 --http.addr=0.0.0.0 --http --http.api eth,net --http.vhosts=*
