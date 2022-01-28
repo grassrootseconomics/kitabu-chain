@@ -7,9 +7,9 @@ contract KitabuValidators {
     address constant SYSTEM_ADDRESS =
         0xffffFFFfFFffffffffffffffFfFFFfffFFFfFFfE;
     address public admissionController =
-        0x77Bea3320Fa46aFF3C7c128B83F5E436596Ba73D;
+        0x9F57B4A25638F3bdfFcB1F3d2902860601a1Aa65;
 
-    address[] public validators;
+    address[] validators;
 
     bool public finalized;
 
@@ -27,7 +27,7 @@ contract KitabuValidators {
         _;
     }
 
-    modifier pendingFinalization() {
+    modifier alreadyFinalized() {
         require(finalized);
         _;
     }
@@ -37,9 +37,10 @@ contract KitabuValidators {
         _;
     }
 
-    constructor() {
+    constructor() public {
         validators.push(admissionController);
         validatorSetIndex[admissionController] = 0;
+        finalized = true;
     }
 
     function setNewAdmissionController(address newController)
@@ -67,7 +68,7 @@ contract KitabuValidators {
     function addValidator(address newValidator)
         public
         onlyAdmissionController
-        pendingFinalization
+        alreadyFinalized
     {
         validators.push(newValidator);
         validatorSetIndex[newValidator] = validators.length - 1;
@@ -77,7 +78,7 @@ contract KitabuValidators {
     function removeValidator(address exValidator)
         public
         onlyAdmissionController
-        pendingFinalization
+        alreadyFinalized
     {
         orderedRemoval(validatorSetIndex[exValidator]);
         delete validatorSetIndex[exValidator];
