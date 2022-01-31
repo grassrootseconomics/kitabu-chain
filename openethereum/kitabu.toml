@@ -1,0 +1,57 @@
+# File bootnode.toml
+# enode://2e7f60d1c95e4e5bb0b8e0b60dc2c093d7c270bc80ac9cddf185b33fb59321fb26353d43ef4a623b33f42e90cfdf8dbe0616bb1f6a2ca6189a038f4525146316@159.223.42.214:30303
+
+[parity]
+chain = "/root/chain-1/kitabu.json"
+base_path = "/root/chain-1/.openethereum/data"
+
+[network]
+port = 30303
+#reserved_peers = "/root/chain-2/bootnodes.txt"
+# reserved_only = true
+max_peers = 10
+snapshot_peers = 25
+nat = "extip:178.128.93.108"
+#nat = "extip:"
+
+[rpc]
+port = 8545
+apis = [
+    "web3",
+    "eth",
+    "net",
+    "personal",
+    "parity",
+    "parity_set",
+    "traces",
+    "rpc",
+    "parity_accounts",
+]
+interface = "all"
+cors = ["*"]
+
+[websockets]
+disable = false
+port = 8546
+interface = "all"
+origins = ["all"]
+
+[account]
+password = ["/root/chain-2/kitabu.pwd"]
+
+[mining]
+#CHANGE ENGINE SIGNER TO VALIDATOR ADDRESS
+engine_signer = "0xcC66240bAdA17eb4C6313FB3FF83e19dfB20C973"
+reseal_on_txs = "none"
+force_sealing = true
+min_gas_price = 1
+gas_floor_target = "1"
+
+[footprint]
+tracing = "on"
+pruning = "archive"
+pruning_history = 256
+cache_size_db = 2000
+
+[misc]
+log_file = "/root/chain-1/kitabu.log"
