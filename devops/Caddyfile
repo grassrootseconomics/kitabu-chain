@@ -1,0 +1,12 @@
+rpc.yourdomain {
+    reverse_proxy openethereum:8545
+}
+
+ws.yourdomain {
+    @websockets {
+        header Connection *Upgrade*
+        header Upgrade    websocket
+    }
+
+    reverse_proxy @websockets openethereum:8546
+}
