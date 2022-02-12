@@ -1,0 +1,22 @@
+[parity]
+chain = "/var/lib/kitabu.json"
+base_path = "/var/lib/kitabu/data"
+
+[network]
+max_peers = 25
+snapshot_peers = 10
+
+[account]
+password = ["/var/lib/kitabu/kitabu.pwd"]
+
+[mining]
+reseal_on_txs = "none"
+force_sealing = true
+min_gas_price = 1
+gas_floor_target = "1"
+
+[footprint]
+tracing = "on"
+pruning = "archive"
+pruning_history = 256
+cache_size_db = 2000
