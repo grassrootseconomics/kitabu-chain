@@ -199,6 +199,15 @@
     },
     "0x289DeFD53E2D96F05Ba29EbBebD9806C94d04Cb6": {
       "balance": "0xDE0B6B3A7640000"
+    },
+    "0xC0Bd05b89DE46568586621381A68db1e4cae0ad9": {
+      "balance": "0x8AC7230489E80000"
+    },
+    "0x395f81800Fa90d2cbc6A92E577404d927DAB7F7d": {
+      "balance": "0xAB86301FD412664000000"
+    },
+    "0xBBb4a93c8dCd82465B73A143f00FeD4AF7492a27": {
+      "balance": "Ox6B33DE13E48B7FE8000000"
     }
   }
 }
