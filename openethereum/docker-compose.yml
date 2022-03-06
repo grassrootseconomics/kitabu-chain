@@ -18,7 +18,7 @@ services:
       --ws-port=8546
       --ws-interface=all
       --ws-hosts=all
-      --bootnodes=enode://f52ef1bd81b6f85661976c9be7666d70bda035c4ac6ce96adf16e381075d9e91642a5bc76298e2c9e28acef36d401ed006f744f5aa13776c39c5db308e1a8c07@165.22.126.72:30303
+      --bootnodes=enode://c930f8dda73a3ab43c855a56034d85ea889c41538f9ef82d484ce23af52a803e3c0f3340c697f8b700c97a032c7094fb0a33dc99d330074ad04fea8b36236d32@142.93.38.53:30303,enode://4e1688c95eb674c4c231f06a3a48b50698447682c169dcde69b22469f4f8b362eab5f79d9e925e39cd640a91dccede09954128754bc96f57e1af187024c6af86@165.22.126.72:30303,enode://cbe0809fd2a45a0fd16b966c24ac0ee4b34f60980644b8bd7086ec799cf4e99fd809a468dbc4346efbe4addfb7c54d33c448592f74b33fedf0a0304e3300a0c5@143.244.142.41:30303
     volumes:
       - ./key:/root/data/keys/kitabu_sarafu/key
       - ./kitabu.json:/root/kitabu.json

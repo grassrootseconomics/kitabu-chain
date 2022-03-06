@@ -5,7 +5,7 @@
 _This step assumes you have root access on a Debian or Ubuntu based host OS_
 
 ```bash
-$ apt get update
+$ apt update
 $ apt install chrony curl git
 $ curl -fsSL https://get.docker.com | bash
 $ curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -17,8 +17,9 @@ $ chmod +x /usr/local/bin/docker-compose
 #### 1. Clone this repo
 
 ```bash
-$ git clone https://git.grassecon.net/grassrootseconomics/kitabu-chain
+$ git clone https://gitlab.com/grassrootseconomics/kitabu-chain.git
 $ cd kitabu chain
+$ cd openethereum
 ```
 
 #### 2. Obtain your private key
@@ -26,6 +27,7 @@ $ cd kitabu chain
 If you have an existing keystore file, rename it to `key` else create a new one:
 
 ```bash
+# wherever you have openethereum installed
 $ openethereum account new --base-path=$(pwd)
 $ mv keys/ethereum/UTC* ./key
 $ rm -rf keys
