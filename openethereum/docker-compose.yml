@@ -17,7 +17,8 @@ services:
       --jsonrpc-apis=web3,eth,net,parity
       --ws-port=8546
       --ws-interface=all
-      --ws-hosts=all      
+      --ws-hosts=all
+      --bootnodes=enode://f52ef1bd81b6f85661976c9be7666d70bda035c4ac6ce96adf16e381075d9e91642a5bc76298e2c9e28acef36d401ed006f744f5aa13776c39c5db308e1a8c07@165.22.126.72:30303
     volumes:
       - ./key:/root/data/keys/kitabu_sarafu/key
       - ./kitabu.json:/root/kitabu.json
