@@ -5,10 +5,9 @@
     "authorityRound": {
       "params": {
         "stepDuration": 4,
+        "blockReward": "0x2386F26FC10000",
         "maximumUncleCountTransition": 0,
         "maximumUncleCount": 0,
-        "emptyStepsTransition": 5,
-        "maximumEmptySteps": 60,
         "validators": {
           "multi": {
             "0": {
