@@ -61,3 +61,20 @@ $ docker-compose up -d
 The `devops` folder contains a Caddy config to use as a reverse proxy to further control access to your validator node's API.
 
 Replace `.yourdomain` in the `Caddyfile` and point it to your server IP.
+
+
+### Non Validator node setup
+
+Change the toml file to:
+
+```toml
+[parity]
+chain = "./kitabu.json"
+base_path = "./data"
+
+[footprint]
+tracing = "on"
+pruning = "archive"
+```
+
+Use the same configs otherwise
