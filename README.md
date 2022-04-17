@@ -61,3 +61,11 @@ $ docker-compose up -d
 The `devops` folder contains a Caddy config to use as a reverse proxy to further control access to your validator node's API.
 
 Replace `.yourdomain` in the `Caddyfile` and point it to your server IP.
+
+#### 6. Reverse proxy setup
+
+Replace the missing values in the `.env` file i.e. WS_SECRET and INSTANCE_NAME (To what you want to call your validator).
+
+Bring it up with:
+
+`docker-compose up -d` inside the ethstats-client dir
