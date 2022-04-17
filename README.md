@@ -69,3 +69,19 @@ Replace the missing values in the `.env` file i.e. WS_SECRET and INSTANCE_NAME (
 Bring it up with:
 
 `docker-compose up -d` inside the ethstats-client dir
+
+### Non Validator node setup
+
+Change the toml file to:
+
+```toml
+[parity]
+chain = "./kitabu.json"
+base_path = "./data"
+
+[footprint]
+tracing = "on"
+pruning = "archive"
+```
+
+Use the same configs otherwise
