@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  ethstats-client:
+    restart: unless-stopped
+    container_name: ethstats-client
+    image: docker.grassecon.net/kitabu/ethstats-client:1.0.0
+    env_file:
+      - .env
+    networks:
+      - openethereum_kitabu
+networks:
+  openethereum_kitabu:
+    external: true
