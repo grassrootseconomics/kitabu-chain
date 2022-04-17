@@ -62,7 +62,7 @@ The `devops` folder contains a Caddy config to use as a reverse proxy to further
 
 Replace `.yourdomain` in the `Caddyfile` and point it to your server IP.
 
-#### 6. Reverse proxy setup
+#### 6. Ethstats client
 
 Replace the missing values in the `.env` file i.e. WS_SECRET and INSTANCE_NAME (To what you want to call your validator).
 
