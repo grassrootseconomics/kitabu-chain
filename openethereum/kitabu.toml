@@ -13,7 +13,6 @@ password = ["/root/password"]
 reseal_on_txs = "none"
 force_sealing = true
 min_gas_price = 1
-gas_floor_target = "1"
 
 [footprint]
 tracing = "on"
