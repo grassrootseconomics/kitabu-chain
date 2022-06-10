@@ -12,8 +12,10 @@ $ curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-com
 $ chmod +x /usr/local/bin/docker-compose
 ```
 
-#### Installing the OpenEthereum bin
+#### Installing the OpenEthereum bin (optional)
 ```bash
+# This setp is only useful if you want to generate a new keystore with OpenEthereum.
+# If you bring your own key or use geth, e.t.c. this step can be skipped
 # x64 Linux only
 $ wget https://github.com/openethereum/openethereum/releases/download/v3.3.5/openethereum-linux-v3.3.5.zip
 $ unzip openethereum*
@@ -30,20 +32,22 @@ $ openethereum --version
 $ git clone https://gitlab.com/grassrootseconomics/kitabu-chain.git
 $ cd kitabu chain
 $ cd openethereum
+# all commands after this step will be run in kitabu-chain/openethereum dir
 ```
 
-#### 2. Obtain your private key
+All steps
+
+#### 2. Obtain your private key (optional)
 
 If you have an existing keystore file, rename it to `key` else create a new one:
 
 ```bash
-# wherever you have openethereum installed
 $ openethereum account new --base-path=$(pwd)
 $ mv keys/ethereum/UTC* ./key
 $ rm -rf keys
 ```
 
-Save the password of the key created above in a `password` file. Save the key's public address for the next step.
+Save the password you entered in the step above in a `password` file. After you complete creating the key, note the public address output (format `0x...`) somewhere.
 
 #### 3. Setup environmental variables and other configs
 
@@ -66,13 +70,13 @@ $ docker-compose up
 $ docker-compose up -d
 ```
 
-#### 5. Reverse proxy setup
+#### 5. Reverse proxy setup (optional)
 
 The `devops` folder contains a Caddy config to use as a reverse proxy to further control access to your validator node's API.
 
 Replace `.yourdomain` in the `Caddyfile` and point it to your server IP.
 
-#### 6. Ethstats client
+#### 6. Ethstats client (optional)
 
 Replace the missing values in the `.env` file i.e. WS_SECRET and INSTANCE_NAME (To what you want to call your validator).
 
