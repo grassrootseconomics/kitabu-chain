@@ -6,10 +6,20 @@ _This step assumes you have root access on a Debian or Ubuntu based host OS_
 
 ```bash
 $ apt update
-$ apt install chrony curl git
+$ apt install chrony curl git unzip
 $ curl -fsSL https://get.docker.com | bash
 $ curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $ chmod +x /usr/local/bin/docker-compose
+```
+
+#### Installing the OpenEthereum bin
+```bash
+# x64 Linux only
+$ wget https://github.com/openethereum/openethereum/releases/download/v3.3.5/openethereum-linux-v3.3.5.zip
+$ unzip openethereum*
+# assumes /usr/local/bin is in $PATH
+$ sudo mv openethereum /usr/local/bin
+$ openethereum --version
 ```
 
 ### Validator node setup
