@@ -2,6 +2,13 @@
 
 ### Prerequisites
 
+#### Hardware requirements
+
+- Stable internet connection ($YOUR_IP:30303 should be publicly reachable)
+- 2 CPU (`$ nproc`)
+- 2 GB available RAM
+- 40 GB Available space
+
 _This step assumes you have root access on a Debian or Ubuntu based host OS_
 
 ```bash
