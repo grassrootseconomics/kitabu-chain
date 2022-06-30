@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-#### Hardware requirements
+#### Validator Hardware requirements
 
 - Stable internet connection ($YOUR_IP:30303 should be publicly reachable)
 - 2 CPU (`$ nproc`)
@@ -15,11 +15,17 @@ _This step assumes you have root access on a Debian or Ubuntu based host OS_
 $ apt update
 $ apt install chrony curl git unzip
 $ curl -fsSL https://get.docker.com | bash
+
+# Docker now ships with docker-compose v2, you can make it available in path by adding the following line to your .bashrc
+# export PATH="/usr/libexec/docker/cli-plugins:$PATH"
+
 $ curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $ chmod +x /usr/local/bin/docker-compose
+
+# If you have a firewall active, add 30303 to the allow list
 ```
 
-#### Installing the OpenEthereum bin (optional)
+#### Installing the OpenEthereum bin (optional, if you want to create a new keystore)
 ```bash
 # This setp is only useful if you want to generate a new keystore with OpenEthereum.
 # If you bring your own key or use geth, e.t.c. this step can be skipped
