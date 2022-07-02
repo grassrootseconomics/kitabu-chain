@@ -3,3 +3,5 @@ openethereum/key
 openethereum/data
 openethereum/password
 devops/caddy
+devops/Caddyfile
+ethstats-client/.env
