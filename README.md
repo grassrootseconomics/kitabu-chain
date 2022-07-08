@@ -65,7 +65,7 @@ Save the password you entered in the step above in a `password` file. After you 
 #### 3. Setup environmental variables and other configs
 
 ```bash
-cp .env.example .env
+$ cp .env.example .env
 ```
 
 Edit the `.env` file:
@@ -83,19 +83,48 @@ $ docker-compose up
 $ docker-compose up -d
 ```
 
-#### 5. Reverse proxy setup (optional)
+### Reverse proxy setup (optional)
 
 The `devops` folder contains a Caddy config to use as a reverse proxy to further control access to your validator node's API.
 
-Replace `.yourdomain` in the `Caddyfile` and point it to your server IP.
+#### with your domain hosting provider:
+create two A records, pointing to your server's public IP address:
+* `rpc.YOURPUBLICDOMAIN`
+* `ws.YOURPUBLICDOMAIN`
 
-#### 6. Ethstats client (optional)
+#### inside the `devops` folder:
+```bash
+$ cp Caddyfile.copyAndEdit Caddyfile
+```
+Edit the `Caddyfile` file:
+- `.YOURPUBLICDOMAIN`: the  public domain that points to your server.
+  
+  
+Bring Caddy up with:
+```bash
+$ docker-compose up -d
+#  or...
+$ docker-compose up -d
+```
 
-Replace the missing values in the `.env` file i.e. WS_SECRET and INSTANCE_NAME (To what you want to call your validator).
+### Ethstats client (optional)
 
-Bring it up with:
+The `ethstats-client` folder contains a the statisics client that publishes to the Kitabu dashboard (https://stats.kitabu.sarafu.network/).
 
-`docker-compose up -d` inside the ethstats-client dir
+#### inside the `ethstats-client` folder:
+```bash
+$ cp .env.copyAndEdit .env
+```
+Edit the `.env` file:
+- `YOURARBITRARYINSTANCENAME`: your chosen instance name (what you want to call your validator on the dashboard)
+
+
+Bring the ethstats client up with:
+```bash
+$ docker-compose up -d
+#  or...
+$ docker-compose up -d
+```
 
 ### Non Validator full node setup
 
